@@ -1,0 +1,233 @@
+body {
+    --background: #c7dff4;
+    --navbar-text: #b17979;
+    --navbar-color: #ffebcd;
+    --heading: #e8ad18;
+    --desc-text: #e23e3e;
+    --table-text: #21b44d;
+    background-color: var(--background);
+    margin-bottom: 150px;
+}
+
+body.dark-mode {
+    --background: #123b3f;
+    --navbar-text: #4a3b3b;
+    --navbar-color: #935f12;
+    --heading: #b8860b;
+    --desc-text: #9b2222;
+    --table-text: #1d5e3c;
+}
+
+#navbar {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--navbar-color);
+    overflow: scroll;
+    z-index: 20;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: var(--navbar-text);
+    text-decoration: none;
+    text-align: center;
+    font-family:Arial;
+    padding: 15px 15px;
+}
+
+#navbar a:hover {
+    background-color: #e9d4b4;
+}
+
+.switch {
+    position: relative;
+    display: block;
+    float: right;
+    width: 50px;
+    height: 20px;
+    right: 60px;
+    top: 13px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch::before {
+    position: relative;
+    right: 40px;
+    content: "Light";
+    font-family: Arial;
+    color: var(--navbar-text);
+}
+
+.switch::after {
+    position: absolute;
+    left: 55px;
+    content: "Dark";
+    font-family: Arial;
+    color: var(--navbar-text);
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    top: 3px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #3ed5a5;
+}
+
+input:checked + .slider::before {
+    transform: translateX(28px);
+}
+
+@keyframes colour {
+    0% {color: blue;}
+    50% {color: green;}
+    100% {color: crimson;}
+}
+
+#welcome {
+    position: relative;
+    top: 50px;
+    text-align: center;
+    color: crimson;
+    font-size: 40px;
+    font-family: Cochin;
+    animation: colour 8s 3s infinite alternate;
+}
+
+@keyframes size {
+    0% {transform: scale(1, 1)}
+    100% {transform: scale(1.3, 1.3)}
+}
+
+#image {
+    position: relative;
+    top: 50px;
+    border: 2px outset burlywood;
+    height: auto;
+    width: 15%;
+    display: block;
+    margin: auto;
+    animation: size 4s 3s infinite alternate;
+}
+
+.content {
+    position: relative;
+    top: 80px;
+    left: 70px;
+    width: 90%;
+}
+
+.headings {
+    color: var(--heading);
+    font-size: 35px;
+    font-family: Gill Sans;
+}
+
+.desc {
+    font-size: 20px;
+    font-family: Trebuchet MS;
+    color: var(--desc-text);
+}
+
+table, th, td {
+    border: 3px solid rgb(194, 198, 80);
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table {
+    width: 75%;
+}
+
+th, td {
+    padding: 17px;
+    font-size: 20px;
+    font-family: Geneva;
+    color: var(--table-text);
+}
+
+#accounts {
+    display: flex;
+    position: relative;
+    top: 20px;
+    left: 85px;
+    width: 65%;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 800px) {
+    #navbar a {
+        padding: 10px;
+    }
+
+    .switch {
+        top: 10px;
+        right: 15vw;
+    }
+
+    #welcome {
+        font-size: 40px;
+        margin-top: 5vh;
+    }
+
+    #image {
+        position: relative;
+        top: 7vh;
+        margin-bottom: 6vw;
+        width: 50%;
+        height: auto;
+    }
+
+    .content {
+        width: 90%;
+    }
+
+    table {
+        width: 80vw;
+    }
+
+    #accounts {
+        width: 100%;
+        left: 0;
+    }
+
+    #accounts img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .headings, .desc {
+        margin-right: 20vw;
+    }
+
+}
